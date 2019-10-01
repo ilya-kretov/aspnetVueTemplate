@@ -8,7 +8,7 @@ namespace aspnetVue.Providers
     public class WeatherProviderFake : IWeatherProvider
     {
         private readonly string[] _summaries = {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Дубак", "Холодрыга", "Холодно", "Прохладно", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         private List<WeatherForecast> WeatherForecasts { get; set; }

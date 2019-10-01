@@ -11,7 +11,7 @@ module.exports = () => {
   const isDevBuild = !(process.env.NODE_ENV && process.env.NODE_ENV === 'production')
   
   const extractCSS = new MiniCssExtractPlugin({
-    filename: 'style.css'
+    filename: 'site.css'
   })
 
   return [{

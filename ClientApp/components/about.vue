@@ -14,6 +14,10 @@
           <li><a href="api/SampleData/WeatherForecasts">API sample data</a> from the dotnet controller</li>
       </ul>
 
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+      Dismissible Alert!
+    </b-alert>
+
       <p>To help you get started, we've also set up:</p>
       <ul>
           <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return
