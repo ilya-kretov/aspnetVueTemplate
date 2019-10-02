@@ -1,15 +1,15 @@
 ﻿<template>
     <div>
-        <h1>Weather forecast</h1>
+        <h1>ListMatch rows</h1>
 
         <p>This component demonstrates fetching data from the server.</p>
 
-        <div v-if="!forecasts" class="text-center">
+        <div v-if="!listMatches" class="text-center">
             <p><em>Loading...</em></p>
             <h1><icon icon="spinner" pulse/></h1>
         </div>
 
-        <template v-if="forecasts">
+        <template v-if="listMatches">
             <table class="table">
                 <thead class="dark-bg text-white">
                     <tr>
@@ -20,11 +20,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr :class="index % 2 == 0 ? 'bg-white' : 'bg-light'" v-for="(forecast, index) in forecasts" :key="index">
-                        <td>{{ forecast.dateFormatted }}</td>
-                        <td>{{ forecast.temperatureC }}</td>
-                        <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
+                    <tr :class="index % 2 == 0 ? 'bg-white' : 'bg-light'" v-for="(listMatch, index) in listMatches" :key="index">
+                        <td>{{ listMatch.dateFormatted }}</td>
+                        <td>{{ listMatch.temperatureC }}</td>
+                        <td>{{ listMatch.temperatureF }}</td>
+                        <td>{{ listMatch.summary }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -55,7 +55,7 @@ export default {
 
   data () {
     return {
-      forecasts: null,
+      listMatches: null,
       total: 0,
       pageSize: 5,
       currentPage: 1
@@ -71,9 +71,9 @@ export default {
       try {
         var from = (page - 1) * (this.pageSize)
         var to = from + this.pageSize
-        let response = await this.$http.get(`/api/weather/forecasts?from=${from}&to=${to}`)
-        console.log(response.data.forecasts)
-        this.forecasts = response.data.forecasts
+        let response = await this.$http.get(`/api/listmatch/rows?from=${from}&to=${to}`)
+        console.log(response.data.listMatches)
+        this.listMatches = response.data.listMatches
         this.total = response.data.total
       } catch (err) {
         window.alert(err)
@@ -84,7 +84,7 @@ export default {
       //    .get('/api/SampleData/WeatherForecasts')
       //    .then(response => {
       //        console.log(response.data)
-      //        this.forecasts = response.data
+      //        this.listMatches = response.data
       //    })
       //    .catch((error) => console.log(error))*/
     }
