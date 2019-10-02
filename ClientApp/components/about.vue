@@ -3,6 +3,9 @@
       <h1 class="mt-4">
         ASP.NET Core & Vue Starter Template
       </h1>
+
+      <!-- proof of concept for bootstrapvue components -->
+      <b-alert variant="success" show>Success Alert</b-alert> 
       <p>Powered by:</p>
       <ul>
           <li><a href="https://get.asp.net/"><icon :icon="['fab', 'microsoft']"/> ASP.NET Core</a> and <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">C#</a>                    for cross-platform server-side code</li>
@@ -13,10 +16,6 @@
           <li><a href="https://fontawesome.com"><icon :icon="['fab', 'font-awesome']"/> Font Awesome</a> (Free) for the icons</li>
           <li><a href="api/SampleData/WeatherForecasts">API sample data</a> from the dotnet controller</li>
       </ul>
-
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-      Dismissible Alert!
-    </b-alert>
 
       <p>To help you get started, we've also set up:</p>
       <ul>
